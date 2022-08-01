@@ -24,4 +24,22 @@ class UserController extends Controller
 
         return response()->json(['data' => $user], 201);
     }
+
+    public function login(LoginUserRequest $request)
+    {
+        $credentials = [
+            'email' => $request->validated('email'),
+            'password' => $request->validated('password')
+        ];
+        
+        if(Auth::attempt($credentials)):
+            return response()->json([
+                'data' => Auth::user(),
+            ], 200);
+        endif;
+            
+        return response()->json([
+            'message' => 'The provided credentials do not match our record'
+        ], 422);
+    }
 }
