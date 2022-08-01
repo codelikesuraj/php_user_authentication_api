@@ -3,11 +3,11 @@
 <ol>
     <li>Update the existing User Model and Migration file to have the following fields:
         <ul>
-            </li>id</li>
-            </li>Name</li>
-            </li>Email</li>
-            </li>Password</li>
-            </li>Timestamps (which already exist, do not change)</li>
+            <li>id</li>
+            <li>Name</li>
+            <li>Email</li>
+            <li>Password</li>
+            <li>Timestamps (which already exist, do not change)</li>
         </ul>
     </li>
     <li>User Controller with the following methods:
