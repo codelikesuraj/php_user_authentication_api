@@ -23,7 +23,10 @@ class UserController extends Controller
 
         $user = User::create($credentials);
 
-        return response()->json(['data' => $user], 201);
+        return response()->json([
+            'message' => 'user created successfully',
+            'data' => $user
+        ], 201);
     }
 
     public function login(LoginUserRequest $request)
@@ -35,6 +38,7 @@ class UserController extends Controller
         
         if(Auth::attempt($credentials)):
             return response()->json([
+                'message' => 'user logged in successfully',
                 'data' => Auth::user(),
             ], 200);
         endif;
@@ -61,6 +65,9 @@ class UserController extends Controller
 
         $user->update($credentials);
 
-        return response()->json($user);
+        return response()->json([
+            'message' => 'user updated successfully',
+            'data' => $user
+        ], 200);
     }
 }
