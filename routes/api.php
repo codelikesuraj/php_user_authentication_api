@@ -24,3 +24,4 @@ Route::post('user/login', [UserController::class, 'login'])->name('user.login');
 Route::put('user/update/{id}', [UserController::class, 'update'])->name('user.update');
 Route::delete('user/delete/{id}', [UserController::class, 'delete'])->name('user.delete');
 Route::get('user/{id}', [UserController::class, 'getUser'])->name('user.one');
+Route::get('users', [UserController::class, 'getUsers'])->name('user.all');

@@ -104,4 +104,21 @@ class UserController extends Controller
             'data' => $user
         ], 200);
     }
+
+    public function getUsers()
+    {
+        $users = User::get();
+        // return $user;
+
+        if($users->count() < 1):
+            return response()->json([
+                'message' => 'no users found'
+            ], 200);
+        endif;
+
+        return response()->json([
+            'message' => 'users found',
+            'data' => $users
+        ], 200);
+    }
 }
