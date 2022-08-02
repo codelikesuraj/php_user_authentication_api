@@ -51,4 +51,5 @@
         <li>Getusers: /users</li>
     </ul>
 </p>
-<p><strong>PUSH YOUR APP TO GITHUB AND HOST ON HEROKU, SHARE LINK TO GITHUB REPO ( link to Heroku should be inside your README.md)</strong></p>
+
+<p><strong>Check out the live project at <a href="https://quiet-mesa-84153.herokuapp.com">https://quiet-mesa-84153.herokuapp.com</a> hosted on Heroku.</strong></p>
