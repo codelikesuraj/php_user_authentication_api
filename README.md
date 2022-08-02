@@ -52,4 +52,4 @@
     </ul>
 </p>
 
-<p><strong>Check out the live project at <a href="https://quiet-mesa-84153.herokuapp.com">https://quiet-mesa-84153.herokuapp.com</a> hosted on Heroku.</strong></p>
+<p><strong>Check out the live project at <a href="https://quiet-mesa-84153.herokuapp.com/api">https://quiet-mesa-84153.herokuapp.com/api</a> hosted on Heroku.</strong></p>
