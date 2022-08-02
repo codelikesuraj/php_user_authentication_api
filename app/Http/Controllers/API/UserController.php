@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\API\LoginUserRequest;
 use App\Http\Requests\API\RegisterUserRequest;
+use App\Http\Requests\API\UpdateUserRequest;
 
 class UserController extends Controller
 {
@@ -41,5 +42,25 @@ class UserController extends Controller
         return response()->json([
             'message' => 'The provided credentials do not match our record'
         ], 422);
+    }
+
+    public function update(UpdateUserRequest $request, $id)
+    {
+        $user = User::find($id);
+
+        if(!$user):
+            return response()->json([
+                'message' => 'The requested user is not found'
+            ], 404);
+        endif;
+
+        $credentials = [
+            'name' => $request->validated('name') ?? $user->name,
+            'email' => $request->validated('email') ?? $user->email,
+        ];
+
+        $user->update($credentials);
+
+        return response()->json($user);
     }
 }
